@@ -70,8 +70,8 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         
         if(itemCount == 1){
-            if(currentItem == "title" || currentItem == "description" || currentItem == "link"){
-                content.appendString(string + "\n")
+            if(currentItem == "title" || currentItem == "description"){
+                content.appendString(string + "\t")
                 print(string)
             }
         }

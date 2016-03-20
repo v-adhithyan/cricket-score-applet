@@ -13,17 +13,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
 
     @IBOutlet weak var window: NSWindow!
     
-    var parser = NSXMLParser()
-    var posts = NSMutableArray()
-    var elements = NSMutableDictionary()
-    var element = NSString()
-    var title = NSMutableString()
-    var content = NSMutableString()
-    var link = NSMutableString()
-    var response = NSURLResponse()
-    var data = NSData()
-    var error:NSError!
-
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
     let popover = NSPopover()
     
