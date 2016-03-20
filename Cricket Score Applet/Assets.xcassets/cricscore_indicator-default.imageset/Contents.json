@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "cricscore_indicator-default.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

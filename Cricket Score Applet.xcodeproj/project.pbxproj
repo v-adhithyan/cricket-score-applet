@@ -10,6 +10,8 @@
 		0F13C05C1C9D00C200325852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F13C05B1C9D00C200325852 /* AppDelegate.swift */; };
 		0F13C05E1C9D00C300325852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F13C05D1C9D00C300325852 /* Assets.xcassets */; };
 		0F13C0611C9D00C300325852 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F13C05F1C9D00C300325852 /* MainMenu.xib */; };
+		0F630DF11C9D2D38002195AB /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630DEF1C9D2D38002195AB /* ScoreViewController.swift */; };
+		0F630DF21C9D2D38002195AB /* ScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F630DF01C9D2D38002195AB /* ScoreViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		0F13C05D1C9D00C300325852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F13C0601C9D00C300325852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0F13C0621C9D00C300325852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F630DEF1C9D2D38002195AB /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreViewController.swift; path = "Cricket Score Applet/ScoreViewController.swift"; sourceTree = "<group>"; };
+		0F630DF01C9D2D38002195AB /* ScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScoreViewController.xib; path = "Cricket Score Applet/ScoreViewController.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,8 @@
 		0F13C04F1C9D00C200325852 = {
 			isa = PBXGroup;
 			children = (
+				0F630DEF1C9D2D38002195AB /* ScoreViewController.swift */,
+				0F630DF01C9D2D38002195AB /* ScoreViewController.xib */,
 				0F13C05A1C9D00C200325852 /* Cricket Score Applet */,
 				0F13C0591C9D00C200325852 /* Products */,
 			);
@@ -117,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F13C05E1C9D00C300325852 /* Assets.xcassets in Resources */,
+				0F630DF21C9D2D38002195AB /* ScoreViewController.xib in Resources */,
 				0F13C0611C9D00C300325852 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F13C05C1C9D00C200325852 /* AppDelegate.swift in Sources */,
+				0F630DF11C9D2D38002195AB /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +277,7 @@
 				0F13C0671C9D00C300325852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
