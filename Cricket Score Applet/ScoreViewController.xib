@@ -18,20 +18,20 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQb-4T-ddM">
-                    <rect key="frame" x="23" y="126" width="63" height="19"/>
-                    <buttonCell key="cell" type="roundRect" title="Previous" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JgT-mq-icV">
+                    <rect key="frame" x="23" y="126" width="77" height="22"/>
+                    <buttonCell key="cell" type="bevel" title="Previous" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JgT-mq-icV">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="cellTitle"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="goLeft:" target="-2" id="Y70-TP-sDI"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSK-oJ-Hf0">
-                    <rect key="frame" x="410" y="126" width="41" height="19"/>
-                    <buttonCell key="cell" type="roundRect" title="Next" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ngk-TM-4jc">
+                    <rect key="frame" x="398" y="126" width="53" height="22"/>
+                    <buttonCell key="cell" type="bevel" title="Next" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ngk-TM-4jc">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="cellTitle"/>
+                        <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="goRight:" target="-2" id="HAc-aN-ad3"/>
