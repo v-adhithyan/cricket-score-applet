@@ -26,6 +26,7 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.beginParsing()
+        updateScore()
     }
     
     
@@ -71,7 +72,7 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
         
         if(itemCount == 1){
             if(currentItem == "title" || currentItem == "description"){
-                content.appendString(string + "\t")
+                content.appendString(string)
                 print(string)
             }
         }
