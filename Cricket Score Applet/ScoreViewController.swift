@@ -86,11 +86,15 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
 extension ScoreViewController{
     @IBAction func goLeft(sender: NSButton){
         currentScoreIndex = (currentScoreIndex - 1 + posts.count) % (posts.count)
-        print(posts[currentScoreIndex])
     }
     
     @IBAction func goRight(sender: NSButton){
         currentScoreIndex = (currentScoreIndex + 1) % (posts.count)
+    }
+    
+    @IBAction func refresh(sender: NSButton){
+        beginParsing()
+        updateScore()
     }
 }
 
