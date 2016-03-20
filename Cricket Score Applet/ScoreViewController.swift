@@ -16,6 +16,7 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
     var content = NSMutableString()
     var currentItem = ""
     var itemCount = 0
+    var appendCount = 0
     var currentScoreIndex: Int = 0{
         didSet{
             updateScore()
@@ -64,6 +65,7 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
         if(elementName == "item"){
             itemCount--;
             currentItem = ""
+            appendCount = 0
             posts.addObject(content)
         }
     }
@@ -72,8 +74,11 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
         
         if(itemCount == 1){
             if(currentItem == "title" || currentItem == "description"){
-                content.appendString(string)
-                print(string)
+                
+                if(appendCount < 3){
+                    content.appendString(string)
+                }
+                appendCount++;
             }
         }
     }
@@ -82,6 +87,9 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
         scoreCard.stringValue = String(posts[currentScoreIndex])
     }
     
+    func removeHtml(string: String){
+        
+    }
 }
 
 extension ScoreViewController{

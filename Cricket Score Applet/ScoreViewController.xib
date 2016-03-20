@@ -38,7 +38,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swb-Xg-iHw">
-                    <rect key="frame" x="116" y="63" width="250" height="132"/>
+                    <rect key="frame" x="116" y="63" width="270" height="132"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="XfU-zO-JXY">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
