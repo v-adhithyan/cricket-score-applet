@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<string>10.6</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 Adhithyan Vijayakumar. All rights reserved.</string>
 	<key>NSMainNibFile</key>
