@@ -11,6 +11,7 @@ import Cocoa
 class ScoreViewController: NSViewController, NSXMLParserDelegate {
     @IBOutlet var scoreCard: NSTextField!
     
+
     var parser = NSXMLParser()
     var posts = NSMutableArray()
     var content = NSMutableString()
@@ -27,6 +28,7 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
     override func viewDidLoad() {
         if #available(OSX 10.10, *) {
             super.viewDidLoad()
+            
         } else {
             // Fallback on earlier versions
         }

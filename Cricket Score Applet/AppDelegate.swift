@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
         
         if #available(OSX 10.10, *) {
             if let button = statusItem.button{
-                button.image = NSImage(named: "cricscore_indicator-default")
+                button.image = NSImage(named: getIconName())
                 button.action = Selector("togglePopover:")
             }
         } else {
@@ -58,6 +58,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
         }else{
             showPopover(sender)
         }
+        
+    }
+    
+    func getIconName() -> String {
+        let appearance = NSUserDefaults.standardUserDefaults().stringForKey("AppleInterfaceStyle") ?? "Light"
+        var iconName : String
+        
+        if(appearance) == "Dark"{
+            iconName = "cricscore_indicator-default-dark"
+        }else{
+            iconName = "cricscore_indicator-default"
+        }
+        
+        return iconName;
         
     }
     
