@@ -23,9 +23,13 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
         }
     }
     //let scores = Score.all
-    
+    //viewdidload is available only on 10.10 and later
     override func viewDidLoad() {
-        super.viewDidLoad()
+        if #available(OSX 10.10, *) {
+            super.viewDidLoad()
+        } else {
+            // Fallback on earlier versions
+        }
         self.beginParsing()
         updateScore()
     }
