@@ -81,7 +81,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
         
     }
     
-    func applicationIsInStartupItem() -> Bool {
+    /*func applicationIsInStartupItem() -> Bool {
         return (itemInLoginItems().existingReference != nil)
     }
     
@@ -155,7 +155,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
             }
         }
         
-    }
+    }*/
     
     
     
