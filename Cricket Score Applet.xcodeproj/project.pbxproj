@@ -12,7 +12,24 @@
 		0F13C0611C9D00C300325852 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F13C05F1C9D00C300325852 /* MainMenu.xib */; };
 		0F630DF11C9D2D38002195AB /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F630DEF1C9D2D38002195AB /* ScoreViewController.swift */; };
 		0F630DF21C9D2D38002195AB /* ScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F630DF01C9D2D38002195AB /* ScoreViewController.xib */; };
+		0FE796F91CA64B350029310B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE796F81CA64B350029310B /* AppDelegate.swift */; };
+		0FE796FB1CA64B350029310B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FE796FA1CA64B350029310B /* Assets.xcassets */; };
+		0FE796FE1CA64B350029310B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FE796FC1CA64B350029310B /* MainMenu.xib */; };
+		0FE797041CA64C450029310B /* Cricket Score Applet Helper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0FE796F61CA64B350029310B /* Cricket Score Applet Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0FE797031CA64B7E0029310B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				0FE797041CA64C450029310B /* Cricket Score Applet Helper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F13C0581C9D00C200325852 /* Cricket Score Applet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cricket Score Applet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +39,22 @@
 		0F13C0621C9D00C300325852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F630DEF1C9D2D38002195AB /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScoreViewController.swift; path = "Cricket Score Applet/ScoreViewController.swift"; sourceTree = "<group>"; };
 		0F630DF01C9D2D38002195AB /* ScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScoreViewController.xib; path = "Cricket Score Applet/ScoreViewController.xib"; sourceTree = "<group>"; };
+		0FE796F61CA64B350029310B /* Cricket Score Applet Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cricket Score Applet Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE796F81CA64B350029310B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FE796FA1CA64B350029310B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FE796FD1CA64B350029310B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0FE796FF1CA64B350029310B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0F13C0551C9D00C200325852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE796F31CA64B350029310B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +70,7 @@
 				0F630DEF1C9D2D38002195AB /* ScoreViewController.swift */,
 				0F630DF01C9D2D38002195AB /* ScoreViewController.xib */,
 				0F13C05A1C9D00C200325852 /* Cricket Score Applet */,
+				0FE796F71CA64B350029310B /* Cricket Score Applet Helper */,
 				0F13C0591C9D00C200325852 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				0F13C0581C9D00C200325852 /* Cricket Score Applet.app */,
+				0FE796F61CA64B350029310B /* Cricket Score Applet Helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +93,17 @@
 				0F13C0621C9D00C300325852 /* Info.plist */,
 			);
 			path = "Cricket Score Applet";
+			sourceTree = "<group>";
+		};
+		0FE796F71CA64B350029310B /* Cricket Score Applet Helper */ = {
+			isa = PBXGroup;
+			children = (
+				0FE796F81CA64B350029310B /* AppDelegate.swift */,
+				0FE796FA1CA64B350029310B /* Assets.xcassets */,
+				0FE796FC1CA64B350029310B /* MainMenu.xib */,
+				0FE796FF1CA64B350029310B /* Info.plist */,
+			);
+			path = "Cricket Score Applet Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +126,24 @@
 			productReference = 0F13C0581C9D00C200325852 /* Cricket Score Applet.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0FE796F51CA64B350029310B /* Cricket Score Applet Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FE797021CA64B350029310B /* Build configuration list for PBXNativeTarget "Cricket Score Applet Helper" */;
+			buildPhases = (
+				0FE796F21CA64B350029310B /* Sources */,
+				0FE796F31CA64B350029310B /* Frameworks */,
+				0FE796F41CA64B350029310B /* Resources */,
+				0FE797031CA64B7E0029310B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cricket Score Applet Helper";
+			productName = "Cricket Score Applet Helper";
+			productReference = 0FE796F61CA64B350029310B /* Cricket Score Applet Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +157,9 @@
 					0F13C0571C9D00C200325852 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = UQ4ZGJ76Q2;
+					};
+					0FE796F51CA64B350029310B = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -114,6 +177,7 @@
 			projectRoot = "";
 			targets = (
 				0F13C0571C9D00C200325852 /* Cricket Score Applet */,
+				0FE796F51CA64B350029310B /* Cricket Score Applet Helper */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +193,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FE796F41CA64B350029310B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE796FB1CA64B350029310B /* Assets.xcassets in Resources */,
+				0FE796FE1CA64B350029310B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,6 +214,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0FE796F21CA64B350029310B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE796F91CA64B350029310B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -148,6 +229,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				0F13C0601C9D00C300325852 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0FE796FC1CA64B350029310B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FE796FD1CA64B350029310B /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -267,6 +356,32 @@
 			};
 			name = Release;
 		};
+		0FE797001CA64B350029310B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Cricket Score Applet Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adhithyan.Cricket-Score-Applet-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0FE797011CA64B350029310B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Cricket Score Applet Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adhithyan.Cricket-Score-Applet-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -287,6 +402,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0FE797021CA64B350029310B /* Build configuration list for PBXNativeTarget "Cricket Score Applet Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FE797001CA64B350029310B /* Debug */,
+				0FE797011CA64B350029310B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
