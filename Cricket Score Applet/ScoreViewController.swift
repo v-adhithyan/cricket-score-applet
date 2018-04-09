@@ -8,11 +8,11 @@
 
 import Cocoa
 
-class ScoreViewController: NSViewController, NSXMLParserDelegate {
+class ScoreViewController: NSViewController, XMLParserDelegate {
     @IBOutlet var scoreCard: NSTextField!
     
 
-    var parser = NSXMLParser()
+    var parser = XMLParser()
     var posts = NSMutableArray()
     var content = NSMutableString()
     var currentItem = ""
@@ -39,15 +39,15 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
     
     func beginParsing(){
         posts = []
-        parser = NSXMLParser(contentsOfURL: NSURL(string:"http://live-feeds.cricbuzz.com/CricbuzzFeed?format=xml")!)!
+        parser = XMLParser(contentsOf: URL(string:"http://live-feeds.cricbuzz.com/CricbuzzFeed?format=xml")!)!
         parser.delegate = self
         parser.parse()
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
     
         if(elementName == "item"){
-            itemCount++;
+            itemCount = itemCount + 1;
             content = NSMutableString()
         }
         
@@ -66,31 +66,31 @@ class ScoreViewController: NSViewController, NSXMLParserDelegate {
         }
     }
     
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
         if(elementName == "item"){
-            itemCount--;
+            itemCount = itemCount - 1;
             currentItem = ""
             appendCount = 0
-            posts.addObject(content)
+            posts.add(content)
         }
     }
     
-    func parser(parser: NSXMLParser, foundCharacters string: String) {
+    @nonobjc func parser(parser: XMLParser, foundCharacters string: String) {
         
         if(itemCount == 1){
             if(currentItem == "title" || currentItem == "description"){
                 
                 if(appendCount < 3){
-                    content.appendString(string)
+                    content.append(string)
                 }
-                appendCount++;
+                appendCount = appendCount + 1;
             }
         }
     }
     
     func updateScore(){
-        scoreCard.stringValue = String(posts[currentScoreIndex])
+        scoreCard.stringValue = String(describing: posts[currentScoreIndex])
     }
     
     func removeHtml(string: String){
@@ -111,6 +111,8 @@ extension ScoreViewController{
         beginParsing()
         updateScore()
     }
+    
+    
 }
 
 

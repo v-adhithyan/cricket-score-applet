@@ -9,11 +9,12 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, XMLParserDelegate {
 
     @IBOutlet weak var window: NSWindow!
+    var button: NSButton!
     
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
+    let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
     let popover = NSPopover()
     
     
@@ -25,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
             if let button = statusItem.button{
                 
                 button.image = NSImage(named: getIconName())
-                button.action = Selector("togglePopover:")
+                button.action = #selector(togglePopover(_:))
             }
         } else {
             // Fallback on earlier versions
@@ -41,12 +42,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
         // Insert code here to tear down your application
     }
 
-    func showPopover(sender: AnyObject?){
+    @objc func showPopover(_ sender: Any?){
         if #available(OSX 10.10, *) {
             if let button = statusItem.button{
                 button.image = NSImage(named: self.getIconName())
                 //window.collectionBehavior = NSWindowCollectionBehavior.FullScreenAuxiliary
-                popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge: NSRectEdge.MinY)
+                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             }
         } else {
             // Fallback on earlier versions
@@ -54,21 +55,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
         
     }
     
-    func closePopover(sender: AnyObject?){
+    @objc func closePopover(_ sender: Any?){
         popover.performClose(sender)
     }
     
-    func togglePopover(sender: AnyObject?){
-        if(popover.shown){
-            closePopover(sender)
+    @available(OSX 10.10, *)
+    @objc func togglePopover(_ sender: Any?){
+        if(popover.isShown){
+            statusItem.button!.action = #selector(closePopover(_:))
         }else{
-            showPopover(sender)
+            statusItem.button!.action = #selector(showPopover(_:))
         }
         
     }
     
     func getIconName() -> String {
-        let appearance = NSUserDefaults.standardUserDefaults().stringForKey("AppleInterfaceStyle") ?? "Light"
+        let appearance = NSAppearance.current().name
         var iconName : String
         
         if(appearance) == "Dark"{
@@ -81,83 +83,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSXMLParserDelegate {
         
     }
     
-    /*func applicationIsInStartupItem() -> Bool {
-        return (itemInLoginItems().existingReference != nil)
-    }
-    
-    func itemInLoginItems() -> (existingReference: LSSharedFileListItemRef?, lastReference: LSSharedFileListItemRef?){
-        let itemUrl: UnsafeMutablePointer<Unmanaged<CFURL>?> = UnsafeMutablePointer<Unmanaged<CFURL>?>.alloc(1)
-        
-        if let appUrl: NSURL = NSURL.fileURLWithPath(NSBundle.mainBundle().bundlePath){
-            let loginItemRef = LSSharedFileListCreate(nil,
-                kLSSharedFileListSessionLoginItems.takeRetainedValue(),
-                nil).takeRetainedValue() as LSSharedFileListRef?
-            
-            if loginItemRef != nil{
-                let loginItems: NSArray = LSSharedFileListCopySnapshot(loginItemRef, nil).takeRetainedValue() as NSArray
-                print("login items count \(loginItems.count)")
-                let lastItemRef: LSSharedFileListItemRef = loginItems.lastObject as! LSSharedFileListItemRef
-                
-                if(loginItems.count > 0){
-                    for var i=0; i<loginItems.count; i++ {
-                        let currentItemRef: LSSharedFileListItemRef = loginItems.objectAtIndex(i) as! LSSharedFileListItemRef
-                        
-                        if LSSharedFileListItemResolve(currentItemRef,0 ,itemUrl, nil) == noErr {
-                            if let urlRef: NSURL = itemUrl.memory?.takeRetainedValue() {
-                                print("url ref: \(urlRef.lastPathComponent)")
-                                if(urlRef.isEqual(appUrl)){
-                                    return (currentItemRef, lastItemRef)
-                                }
-                            }
-                        } else{
-                            print("unknown application")
-                        }
-                    }
-                    return (nil, lastItemRef)
 
-                }else{
-                    let addAtStart: LSSharedFileListItemRef = kLSSharedFileListItemBeforeFirst.takeRetainedValue()
-                    return (nil, addAtStart)
-
-                }
-            }
-
-        }
-        return (nil, nil)
-    }
-    
-    func toggleLaunchAtStartup() {
-        let itemReferences = itemInLoginItems()
-        let shouldBeToggled = (itemReferences.existingReference == nil)
-        
-        let loginItemsRef = LSSharedFileListCreate(nil,
-            kLSSharedFileListSessionLoginItems.takeRetainedValue(), nil).takeRetainedValue() as LSSharedFileListRef!
-        
-        if loginItemsRef != nil {
-            if shouldBeToggled {
-                if let appUrl: CFURLRef = NSURL.fileURLWithPath(NSBundle.mainBundle().bundlePath){
-                    LSSharedFileListInsertItemURL(
-                        loginItemsRef,
-                        itemReferences.lastReference,
-                        nil,
-                        nil,
-                        appUrl,
-                        nil,
-                        nil
-                    )
-                    print("app added to login items")
-                }
-            } else{
-                if let itemRef = itemReferences.existingReference {
-                    LSSharedFileListItemRemove(loginItemsRef, itemRef);
-                    print("app was removed from login items")
-                }
-            }
-        }
-        
-    }*/
-    
-    
-    
 }
 
