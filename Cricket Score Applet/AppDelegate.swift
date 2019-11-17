@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, XMLParserDelegate {
     @IBOutlet weak var window: NSWindow!
     var button: NSButton!
     
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let popover = NSPopover()
     
     
@@ -70,10 +70,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, XMLParserDelegate {
     }
     
     func getIconName() -> String {
-        let appearance = NSAppearance.current().name
+        let appearance = NSAppearance.current.name
         var iconName : String
         
-        if(appearance) == "Dark"{
+        if(appearance.rawValue) == "Dark"{
             iconName = "cricscore_indicator-default-dark"
         }else{
             iconName = "cricscore_indicator-default"
